@@ -7,6 +7,9 @@ src/dom_analysis.json
 src/content/debug-*.js
 src/content/test-*.js
 
+# 配置（包含API Key等敏感信息，不提交）
+src/config.json
+
 # IDE
 .vscode/
 .idea/
