@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>求职助手</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>求职助手</h1>
+      <span class="version">v1.0</span>
+    </header>
+
+    <div class="popup-body">
+      <!-- 状态概览 -->
+      <div class="status-section">
+        <div class="status-item" id="api-status">
+          <span class="status-dot"></span>
+          <span class="status-text">API 未配置</span>
+        </div>
+        <div class="status-item" id="resume-status">
+          <span class="status-dot"></span>
+          <span class="status-text">简历未填写</span>
+        </div>
+        <div class="status-item" id="platform-status">
+          <span class="status-dot"></span>
+          <span class="status-text">未检测到招聘平台</span>
+        </div>
+      </div>
+
+      <!-- 当前页面信息 -->
+      <div class="info-section" id="page-info" style="display:none;">
+        <div class="section-title">当前页面</div>
+        <div id="platform-name" class="platform-badge"></div>
+      </div>
+
+      <!-- 快捷操作 -->
+      <div class="actions-section">
+        <button id="analyze-current-btn" class="action-btn primary" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          分析当前岗位
+        </button>
+        <button id="go-settings-btn" class="action-btn secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          设置
+        </button>
+      </div>
+
+      <!-- 使用提示 -->
+      <div class="tips-section">
+        <div class="section-title">使用提示</div>
+        <ul class="tips-list">
+          <li>先在设置中配置API Key和简历信息</li>
+          <li>访问Boss直聘或拉勾网，岗位卡片上会出现"分析岗位"按钮</li>
+          <li>在岗位详情页点击浮动按钮进行分析</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

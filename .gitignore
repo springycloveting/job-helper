@@ -1,0 +1,19 @@
+# 调试脚本
+src/debug_cdp.py
+src/debug_cdp2.py
+src/debug_dom.py
+src/debug_liepin_cdp.py
+src/dom_analysis.json
+src/content/debug-*.js
+src/content/test-*.js
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# JoyCode
+.joycode/

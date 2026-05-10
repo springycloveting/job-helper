@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate Icons</title></head>
+<body>
+<canvas id="c16" width="16" height="16"></canvas>
+<canvas id="c48" width="48" height="48"></canvas>
+<canvas id="c128" width="128" height="128"></canvas>
+<script>
+function drawIcon(canvas, size) {
+  const ctx = canvas.getContext('2d');
+  // 蓝色圆角矩形背景
+  ctx.fillStyle = '#1a73e8';
+  ctx.beginPath();
+  const r = size * 0.2;
+  ctx.moveTo(r, 0);
+  ctx.lineTo(size - r, 0);
+  ctx.quadraticCurveTo(size, 0, size, r);
+  ctx.lineTo(size, size - r);
+  ctx.quadraticCurveTo(size, size, size - r, size);
+  ctx.lineTo(r, size);
+  ctx.quadraticCurveTo(0, size, 0, size - r);
+  ctx.lineTo(0, r);
+  ctx.quadraticCurveTo(0, 0, r, 0);
+  ctx.fill();
+  // 白色"职"字
+  ctx.fillStyle = 'white';
+  ctx.font = `bold ${size * 0.6}px sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('职', size / 2, size / 2);
+}
+
+drawIcon(document.getElementById('c16'), 16);
+drawIcon(document.getElementById('c48'), 48);
+drawIcon(document.getElementById('c128'), 128);
+
+// 下载图标
+[16, 48, 128].forEach(size => {
+  const canvas = document.getElementById(`c${size}`);
+  const link = document.createElement('a');
+  link.download = `icon${size}.png`;
+  link.href = canvas.toDataURL();
+  link.click();
+});
+</script>
+</body>
+</html>

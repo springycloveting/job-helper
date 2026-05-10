@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>求职助手 - 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>求职助手 - 设置</h1>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="api-settings">API 配置</button>
+      <button class="tab-btn" data-tab="resume-settings">简历信息</button>
+    </div>
+
+    <!-- API 配置 -->
+    <div id="api-settings" class="tab-content active">
+      <div class="form-group">
+        <label for="api-key">API Key</label>
+        <input type="password" id="api-key" placeholder="输入你的API Key">
+        <small>你的API Key仅存储在本地浏览器中，不会上传到任何服务器</small>
+      </div>
+
+      <div class="form-group">
+        <label for="base-url">API Base URL</label>
+        <input type="text" id="base-url" placeholder="例如: https://api.openai.com/v1">
+        <small>支持OpenAI、DeepSeek、通义千问等兼容格式的API地址</small>
+      </div>
+
+      <div class="form-group">
+        <label for="model">模型名称</label>
+        <input type="text" id="model" placeholder="例如: gpt-3.5-turbo, deepseek-chat, qwen-turbo">
+        <small>输入你的API支持的具体模型名称</small>
+      </div>
+
+      <div class="form-actions">
+        <button id="save-api-btn" class="btn btn-primary">保存配置</button>
+        <button id="test-api-btn" class="btn btn-secondary">测试连接</button>
+      </div>
+
+      <div id="api-status" class="status-message"></div>
+    </div>
+
+    <!-- 简历信息 -->
+    <div id="resume-settings" class="tab-content">
+      <div class="form-group">
+        <label for="resume-text">简历内容</label>
+        <textarea id="resume-text" rows="15" placeholder="请粘贴你的简历内容...&#10;&#10;建议包含以下信息：&#10;- 基本信息（姓名、学历、工作年限）&#10;- 工作经历（公司、职位、主要职责和成就）&#10;- 技能特长&#10;- 项目经验"></textarea>
+        <small>你的简历仅存储在本地浏览器中，仅用于岗位匹配分析</small>
+      </div>
+
+      <div class="form-actions">
+        <button id="save-resume-btn" class="btn btn-primary">保存简历</button>
+      </div>
+
+      <div id="resume-status" class="status-message"></div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
